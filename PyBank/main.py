@@ -47,9 +47,23 @@ with open(banking_csv,'r') as csvfile:
     
     #data checking/printing
     print(f'Financial Analysis')
+    print(f'-------------------------')
     print(f'Total Months: {numMonths}') #correct answer = 86
     print(f'Total: {netTotal}') #correct answer = $38382578
     #print(f'The delta list is {deltaList}')
     print(f'Average Change: {avgDelta}') #correct answer = $-2315.12
     print(f'Greatest Increase in Profits: {greatIncrMY} ({greatIncrease})') #correct answer = Feb-2012 ($1926159)
     print(f'Greatest Decrease in Profits: {greatDecrMY} ({greatDecrease})') #correct answer = Sep-2013 ($-2196167)
+    
+#trying to create a new text file
+exportFilepath = os.path.join('Analysis','PyBank_analysis.txt')
+f = open(exportFilepath,"w")
+f.write('Financial Analysis\n')
+f.write(f'-------------------------\n')
+f.write(f'Total Months: {numMonths}\n') #correct answer = 86
+f.write(f'Total: {netTotal}\n') #correct answer = $38382578
+#print(f'The delta list is {deltaList}\n')
+f.write(f'Average Change: {avgDelta}\n') #correct answer = $-2315.12
+f.write(f'Greatest Increase in Profits: {greatIncrMY} ({greatIncrease})\n') #correct answer = Feb-2012 ($1926159)
+f.write(f'Greatest Decrease in Profits: {greatDecrMY} ({greatDecrease})\n') #correct answer = Sep-2013 ($-2196167)
+f.close()
